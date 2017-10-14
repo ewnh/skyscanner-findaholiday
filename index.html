@@ -1,8 +1,75 @@
-<html>
-	<body>
-		<p>Hello World</p>
-		<form action="getresults.php" method="POST">
-			<input type="submit" value="Submit">
-		</form>
-	</body>
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Spectre sign up form</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+
+  <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/css/bootstrap.min.css'>
+<link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,300'>
+<link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Roboto:400,700,300'>
+<link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css'>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script>
+      $( function() {
+          $( "#datepicker" ).datepicker();
+      } );
+
+
+      $( function() {
+          $( "#datepicker1" ).datepicker();
+      } );
+  </script>
+      <link rel="stylesheet" href="css/style.css">
+
+  
+</head>
+
+<body>
+  <div class="signup__container">
+  <div class="container__child signup__thumbnail">
+    
+    <div class="thumbnail__content text-center">
+      <h1 class="heading--primary">Team X Sky Scanner.</h1>
+      <h2 class="heading--secondary">Ready to fly?</h2>
+    </div>
+
+    <div class="signup__overlay"></div>
+  </div>
+  <div class="container__child signup__form">
+    <form action="F1_process.php">
+      <div class="form-group">
+        <label for="username">How much are you willing to spend?</label>
+        <input class="form-control" type="text" name="amount" id="username" placeholder="Enter your amount" required />
+      </div>
+      <div class="form-group">
+        <label for="text">When would you like to leave?</label>
+        <input class="form-control" type="text" name="date1" id="datepicker" placeholder="Date" required />
+      </div>
+      <div class="form-group">
+        <label for="text">When do you intend to return?</label>
+        <input class="form-control" type="text" name="date2" id="datepicker1" placeholder="Date" required />
+      </div>
+      <div class="form-group">
+        <label for="text">What is your current location?</label>
+        <input class="form-control" type="text" name="location" id="passwordRepeat" placeholder="Where you'd like to go?" required />
+      </div>
+      <div class="m-t-lg">
+        <ul class="list-inline">
+          <li>
+            <input class="btn btn--form" type="submit" value="Register" />
+          </li>
+
+        </ul>
+      </div>
+    </form>  
+  </div>
+</div>
+  
+  
+</body>
 </html>
