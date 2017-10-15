@@ -12,7 +12,6 @@ print_r($_SESSION['route1']);
  * Date: 15/10/17
  * Time: 08:45
  */
-
 ?>
 
 
@@ -43,10 +42,17 @@ print_r($_SESSION['route1']);
         <tbody>
         <tr>
             <th scope="row">1</th>
-            <td><?php echo $_SESSION['route0']['DestinationId'] ?></td>
-            <td>Otto</td>
-            <td>@mdo</td>
-            <td>@mdo</td>
+            <?php
+
+            $items = count($_SESSION);
+            for($i=0; $i<=$item; $i++)
+            {
+                $word = 'route'+strval($i);
+                echo '<td>';
+                echo $_SESSION[$word]['DestinationId'];
+                echo '</td>';
+            }?>
+
         </tr>
         <tr>
             <th scope="row">2</th>
