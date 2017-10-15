@@ -1,4 +1,5 @@
 <?php
+session_start();
 function getNearbyCities($location, $minradius, $maxradius) {
 	$response = file_get_contents('http://getnearbycities.geobytes.com/GetNearbyCities?limit=10000&radius=' . $maxradius . 
 		'&minradius=' . $minradius . '&locationcode='. $location);
@@ -37,7 +38,13 @@ function lookupRoute($routes, $id) {
 	}
 }
 
+function getResults() {
+	return "Test";
+}
+
 //getNearbyCities('UKENSHEF', 0, 1000);
 //getRouteCost('UK', 'US', '2017-10-15', '2017-10-22');
-filterRoutes(getAllRoutes('UK', 'anywhere', '2017-10-16', '2017-10-23'), 100);
+//filterRoutes(getAllRoutes('UK', 'anywhere', '2017-10-16', '2017-10-23'), 100);
+$_SESSION['results'] = getResults();
+header("Location: output.php");
 ?>
