@@ -52,6 +52,21 @@ print_r($_SESSION['route1']);
                 echo '<td>';
                 echo $_SESSION[$word]['Destination'];
                 echo '</td>';
+                $word = 'route'. strval($i);
+                print($word);
+                echo '<td>';
+                echo $_SESSION[$word]['Price'];
+                echo '</td>';
+                $word = 'route'. strval($i);
+                print($word);
+                echo '<td>';
+                echo $_SESSION[$word]['Price'];
+                echo '</td>';
+                $word = 'route'. strval($i);
+                print($word);
+                echo '<td>';
+                echo $_SESSION[$word]['Price']*2;
+                echo '</td>';
             }?>
 
         </tr>
