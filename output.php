@@ -1,6 +1,11 @@
 <?php
 session_start();
-print_r($_SESSION['results']);
+//echo var_dump($_SESSION);
+//echo($_SESSION['test']);
+//if(isset($_SESSION['test'])) { print("DESTINATION SET\n"); }
+//print_r($_SESSION['destination']);
+print_r($_SESSION['route0']);
+print_r($_SESSION['route1']);
 /**
  * Created by PhpStorm.
  * User: daedalus
@@ -38,7 +43,7 @@ print_r($_SESSION['results']);
         <tbody>
         <tr>
             <th scope="row">1</th>
-            <td>Mark</td>
+            <td><?php echo $_SESSION['route0']['DestinationId'] ?></td>
             <td>Otto</td>
             <td>@mdo</td>
             <td>@mdo</td>
