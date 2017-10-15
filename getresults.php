@@ -6,17 +6,31 @@ function getNearbyCities($location, $minradius, $maxradius) {
 	print_r($decoded);
 }
 
-function getRouteCost($location, $destination, $startdate, $enddate) {
-	$response = file_get_contents('http://partners.api.skyscanner.net/apiservices/browseroutes/v1.0/' . $location . 
-		'/GBP/en-UK/' . $location . '/' . $destination .'/' . $startdate . '/' . $enddate . '?apikey=' . readAPIKey());
-	$decoded = json_decode($response, true);
-	print_r($decoded);
+function getAllRoutes($location, $destination, $startdate, $enddate) {
+	return json_decode(file_get_contents('http://partners.api.skyscanner.net/apiservices/browseroutes/v1.0/' . $location . 
+		'/GBP/en-UK/' . $location . '/' . $destination .'/' . $startdate . '/' . $enddate . '?apikey=' . readAPIKey()), true);
 }
 
 function readAPIKey() {
 	return file_get_contents('../skyscanner-pw');
 }
 
+function filterRoutes($routes, $maxprice) {
+	$i = 0;
+	foreach($routes["Routes"] as $route) {
+		if(!array_key_exists("Price", $route)) {
+			print("i=".$i."\n");
+			unset($i);
+		}
+		else {
+			//print_r($route["Price"]);
+			$i += 1;
+		}
+	}
+	print_r($routes["Routes"]);
+}
+
 //getNearbyCities('UKENSHEF', 0, 1000);
-getRouteCost('UK', 'US', '2017-10-15', '2017-10-22');
+//getRouteCost('UK', 'US', '2017-10-15', '2017-10-22');
+filterRoutes(getAllRoutes('UK', 'US', '2017-10-15', '2017-10-22'), 100);
 ?>
