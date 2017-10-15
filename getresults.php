@@ -22,10 +22,22 @@ function filterRoutes($routes, $maxprice) {
 			unset($routes["Routes"][$index]);
 		}
 	}
-	print_r($routes["Routes"]);
+
+	foreach($routes["Routes"] as $route) {
+		print_r($route);
+		lookupRoute($routes, $route["DestinationId"]);
+	}
+}
+
+function lookupRoute($routes, $id) {
+	foreach($routes["Places"] as $place) {
+		if($place["PlaceId"] == $id) {
+			print("PlaceId=".$id." is ".$place["Name"]."\n");
+		}
+	}
 }
 
 //getNearbyCities('UKENSHEF', 0, 1000);
 //getRouteCost('UK', 'US', '2017-10-15', '2017-10-22');
-filterRoutes(getAllRoutes('UK', 'FR', '2017-10-16', '2017-10-23'), 100);
+filterRoutes(getAllRoutes('UK', 'anywhere', '2017-10-16', '2017-10-23'), 100);
 ?>
