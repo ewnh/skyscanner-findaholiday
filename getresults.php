@@ -1,11 +1,5 @@
 <?php
 session_start();
-function getNearbyCities($location, $minradius, $maxradius) {
-	$response = file_get_contents('http://getnearbycities.geobytes.com/GetNearbyCities?limit=10000&radius=' . $maxradius . 
-		'&minradius=' . $minradius . '&locationcode='. $location);
-	$decoded = json_decode($response, true);
-	print_r($decoded);
-}
 
 function getAllRoutes($location, $destination, $startdate, $enddate) {
 	return json_decode(file_get_contents('http://partners.api.skyscanner.net/apiservices/browseroutes/v1.0/' . $location . 
