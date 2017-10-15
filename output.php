@@ -33,19 +33,19 @@ session_start();
             <th>#</th>
             <th>Destination</th>
             <th>Flight Price</th>
-            <th>Hotel Price</th>
+
             <th>Total Price</th>
 
         </tr>
         </thead>
         <tbody>
         <tr>
-            <th scope="row">1</th>
+
             <?php
 
             $items = count($_SESSION);
             for($i=0; $i<=20; $i++)
-            {   echo '<th scope="row">1</th>';
+            {   echo '<th scope="row"></th>';
                 $word = 'route'. strval($i);
                 print($word);
                 echo '<td>';
@@ -58,9 +58,7 @@ session_start();
                 echo '</td>';
                 $word = 'route'. strval($i);
                 print($word);
-                echo '<td>';
-                echo $_SESSION[$word]['Price'];
-                echo '</td>';
+                
                 $word = 'route'. strval($i);
                 print($word);
                 echo '<td>';
