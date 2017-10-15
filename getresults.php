@@ -33,7 +33,7 @@ function lookupRoute($routes, $id) {
 }
 
 function getResults() {
-	return "Test";
+	return $_POST['amount'];
 }
 
 //getNearbyCities('UKENSHEF', 0, 1000);
