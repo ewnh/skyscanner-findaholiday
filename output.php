@@ -4,8 +4,7 @@ session_start();
 //echo($_SESSION['test']);
 //if(isset($_SESSION['test'])) { print("DESTINATION SET\n"); }
 //print_r($_SESSION['destination']);
-print_r($_SESSION['route0']);
-print_r($_SESSION['route1']);
+
 /**
  * Created by PhpStorm.
  * User: daedalus
@@ -45,7 +44,7 @@ print_r($_SESSION['route1']);
             <?php
 
             $items = count($_SESSION);
-            for($i=0; $i<=$item; $i++)
+            for($i=0; $i<=20; $i++)
             {   echo '<th scope="row">1</th>';
                 $word = 'route'. strval($i);
                 print($word);
@@ -71,7 +70,7 @@ print_r($_SESSION['route1']);
             }?>
 
 
-      
+
         </tbody>
     </table>
 
