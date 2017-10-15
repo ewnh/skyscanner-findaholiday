@@ -17,7 +17,7 @@ function readAPIKey() {
 
 function filterRoutes($routes, $maxprice) {
 	foreach($routes["Routes"] as $route) {
-		if(!array_key_exists("Price", $route)) {
+		if(!array_key_exists("Price", $route) || $route["Price"] > $maxprice) {
 			$index = array_search($route, $routes["Routes"]);
 			unset($routes["Routes"][$index]);
 		}
@@ -27,5 +27,5 @@ function filterRoutes($routes, $maxprice) {
 
 //getNearbyCities('UKENSHEF', 0, 1000);
 //getRouteCost('UK', 'US', '2017-10-15', '2017-10-22');
-filterRoutes(getAllRoutes('UK', 'US', '2017-10-15', '2017-10-22'), 100);
+filterRoutes(getAllRoutes('UK', 'FR', '2017-10-16', '2017-10-23'), 100);
 ?>
