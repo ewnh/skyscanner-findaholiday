@@ -16,15 +16,10 @@ function readAPIKey() {
 }
 
 function filterRoutes($routes, $maxprice) {
-	$i = 0;
 	foreach($routes["Routes"] as $route) {
 		if(!array_key_exists("Price", $route)) {
-			print("i=".$i."\n");
-			unset($i);
-		}
-		else {
-			//print_r($route["Price"]);
-			$i += 1;
+			$index = array_search($route, $routes["Routes"]);
+			unset($routes["Routes"][$index]);
 		}
 	}
 	print_r($routes["Routes"]);
