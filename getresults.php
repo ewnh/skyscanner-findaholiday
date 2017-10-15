@@ -41,13 +41,10 @@ function getResults($routes) {
 	$routes = filterRoutes($routes, 100);
 	$i = 0;
 	foreach($routes["Routes"] as $route) {
+		$route["Destination"] = lookupRoute($routes, $route["DestinationId"]);
 		$_SESSION["route".$i] = $route;
 		$i = $i + 1;
 	}
-//	$_SESSION['test'] = $route;
-//	$_SESSION['destination'] = lookupRoute($routes, $route[0]["DestinationId"]);
-//	$_SESSION['flight_price'] = $route["Price"];
-//	$_SESSION['total_price'] = $route["Price"];
 }
 
 //getNearbyCities('UKENSHEF', 0, 1000);
