@@ -4,6 +4,7 @@ session_start();
 //echo($_SESSION['test']);
 //if(isset($_SESSION['test'])) { print("DESTINATION SET\n"); }
 //print_r($_SESSION['destination']);
+echo $_SESSION['loc'];
 
 /**
  * Created by PhpStorm.
@@ -33,38 +34,38 @@ session_start();
             <th>#</th>
             <th>Destination</th>
             <th>Flight Price</th>
-
             <th>Total Price</th>
 
         </tr>
         </thead>
         <tbody>
         <tr>
-
+            <th scope="row">1</th>
             <?php
 
             $items = count($_SESSION);
-            for($i=0; $i<=20; $i++)
-            {   echo '<th scope="row"></th>';
+            $i = 0;
+            while(1)
+            {   
+	        if($_SESSION['route'.strval($i+1)]['Price'] == '') { break; }
+                echo '<th scope="row">'.$i.'</th>';
                 $word = 'route'. strval($i);
-                print($word);
+                //print($word);
                 echo '<td>';
                 echo $_SESSION[$word]['Destination'];
                 echo '</td>';
                 $word = 'route'. strval($i);
-                print($word);
+                //print($word);
                 echo '<td>';
                 echo $_SESSION[$word]['Price'];
                 echo '</td>';
                 $word = 'route'. strval($i);
-                print($word);
-                
-                $word = 'route'. strval($i);
-                print($word);
+                //print($word);
                 echo '<td>';
-                echo $_SESSION[$word]['Price']*2;
+                echo $_SESSION[$word]['Price'];
                 echo '</td>';
                 echo ' </tr>';
+		$i += 1;
             }?>
 
 

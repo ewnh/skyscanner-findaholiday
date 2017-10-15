@@ -36,9 +36,9 @@ function lookupRoute($routes, $id) {
 	return "Couldn't find location name";
 }
 
-function getResults($routes) { 
-	$routes = getAllRoutes('UK', 'anywhere', '2017-10-16', '2017-10-23');
-	$routes = filterRoutes($routes, 100);
+function getResults($routes, $maxprice) { 
+//	$routes = getAllRoutes('UK', 'anywhere', '2017-10-16', '2017-10-23');
+	$routes = filterRoutes($routes, $maxprice);
 	$i = 0;
 	foreach($routes["Routes"] as $route) {
 		$route["Destination"] = lookupRoute($routes, $route["DestinationId"]);
@@ -50,7 +50,8 @@ function getResults($routes) {
 //getNearbyCities('UKENSHEF', 0, 1000);
 //getRouteCost('UK', 'US', '2017-10-15', '2017-10-22');
 //filterRoutes(getAllRoutes('UK', 'anywhere', '2017-10-16', '2017-10-23'), 100);
-getResults(getAllRoutes('UK', 'US', '2017-10-16', '2017-10-23'));
+$_SESSION['loc'] = $_POST['location'];
+getResults(getAllRoutes($_POST['location'], 'anywhere', '2017-10-16', '2017-10-23'), $_POST['amount']);
 //$_SESSION['test'] = getAllRoutes('UK', 'US', '2017-10-16', '2017-10-23');
 header("Location: output.php");
 ?>
