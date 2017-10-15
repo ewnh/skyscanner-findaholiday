@@ -60,7 +60,7 @@ print_r($_SESSION['route1']);
             <?php
 
             $items = count($_SESSION);
-            for($i=0; $i<=$item; $i++)
+            for($i=0; $i<=10; $i++)
             {
                 $word = 'route'. strval($i);
                 print($word);
