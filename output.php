@@ -47,7 +47,7 @@ print_r($_SESSION['route1']);
             $items = count($_SESSION);
             for($i=0; $i<=$item; $i++)
             {
-                $word = 'route'+strval($i);
+                $word = 'route'. strval($i);
                 print($word);
                 echo '<td>';
                 echo $_SESSION[$word]['DestinationId'];
