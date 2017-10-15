@@ -46,7 +46,7 @@ print_r($_SESSION['route1']);
 
             $items = count($_SESSION);
             for($i=0; $i<=$item; $i++)
-            {
+            {   echo '<th scope="row">1</th>';
                 $word = 'route'. strval($i);
                 print($word);
                 echo '<td>';
@@ -67,49 +67,11 @@ print_r($_SESSION['route1']);
                 echo '<td>';
                 echo $_SESSION[$word]['Price']*2;
                 echo '</td>';
+                echo ' </tr>';
             }?>
 
-        </tr>
-        <tr>
-            <th scope="row">2</th>
-            <?php
 
-            $items = count($_SESSION);
-            for($i=0; $i<=10; $i++)
-            {
-                $word = 'route'. strval($i);
-                print($word);
-                echo '<td>';
-                echo $_SESSION[$word]['Price'];
-                echo '</td>';
-            }?>
-        </tr>
-        <tr>
-            <?php
-
-            $items = count($_SESSION);
-            for($i=0; $i<=$item; $i++)
-            {
-                $word = 'route'. strval($i);
-                print($word);
-                echo '<td>';
-                echo $_SESSION[$word]['Price'];
-                echo '</td>';
-            }?>
-        </tr>
-        <tr>
-            <?php
-
-            $items = count($_SESSION);
-            for($i=0; $i<=$item; $i++)
-            {
-                $word = 'route'. strval($i);
-                print($word);
-                echo '<td>';
-                echo $_SESSION[$word]['Price']*2;
-                echo '</td>';
-            }?>
-        </tr>
+      
         </tbody>
     </table>
 
